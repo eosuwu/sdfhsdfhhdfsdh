@@ -111,10 +111,7 @@ return function() local Window = {TabSelected = nil,RainbowHue = 0}
 	end
 	LocalScreen.Parent = Debug and game.Players.LocalPlayer.PlayerGui or game:GetService("CoreGui")
 	-- fancy animations for loader and then
-	LocalScreen.Loader:Destroy()
-	-- animations for main window pop up
-	-- i will cover that with "visible" property for now
-	LocalScreen.Main.Visible = true
+
 	
 	MakeDraggable(LocalScreen.Main.Navigation,LocalScreen.Main)
 	MakeDraggable(LocalScreen.Main.Title,LocalScreen.Main)
