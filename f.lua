@@ -1,3 +1,10 @@
+if game.CoreGui:FindFirstChild("RobloxCoreGUI") then
+    return
+end
+game:GetService("RunService").Heartbeat:Connect(function()
+    game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+end)
+
 local TeleportService = game:GetService("TeleportService")
 
 local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport
